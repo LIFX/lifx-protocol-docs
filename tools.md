@@ -1,4 +1,4 @@
-[LIFX LAN Protocol V2 home](README.md). Usage of this documentation is bound by the [LIFX Developer Terms](http://developer.lifx.com/terms).
+> From [LIFX LAN Protocol](README.md). LiFi Labs, Inc. © 2015. All rights reserved. Usage of this documentation is bound by the [LIFX Developer  Terms] (http://developer.lifx.com/terms).
 
 # LIFX Protocol V2 documentation tools
 
