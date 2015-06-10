@@ -1,0 +1,9 @@
+.begin dformat
+style bitwid 0.1
+noname
+     64--64 reserved
+noname
+     16--16 type
+     16--16 reserved 
+       --32 ...
+.end

@@ -1,0 +1,11 @@
+.begin dformat
+style bitwid 0.1
+noname
+     64--64 target
+noname
+     48--48 site
+     6--6 reserved
+     1--1 ack_required
+     1--1 res_required
+     8--8 sequence
+.end
