@@ -21,8 +21,8 @@
 ## Overview
 
 This documentation is intended for third-party developers creating
-client applications, which interact with LIFX lightbulbs by sending
-and receiving, then parsing LIFX Protocol messages.
+client applications, which interact with LIFX lightbulbs over the LAN
+by sending and receiving, then parsing LIFX Protocol messages.
 
 The LIFX Protocol consists of messages that are used to control and obtain
 the state of devices (specifically lightbulbs).
@@ -31,6 +31,9 @@ Each message is composed of a header and a payload.
 
 Headers contain the message size, type, routing, response flags and more.
 Payloads contain information germane to a specific message type.
+
+To interact with LIFX lightbulbs over the Internet (Cloud or WAN),
+see the [LIFX HTTP API documention](http://developer.lifx.com).
 
 ## Transport layer
 
