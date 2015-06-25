@@ -63,8 +63,8 @@ client and the device.  Some common message exchanges are shown in the
 
 Often, device discovery is a good place to start.
 In which case, the [discovery workflow](workflows.md#discovery),
-along with the [Device::GetService](messages/device.md#getservice)
-and the [Device::StateService](messages/device.md#stateservice)
+along with the [Device::GetService](messages/device.md#getservice---2)
+and the [Device::StateService](messages/device.md#stateservice---3)
 messages are relevant.
 
 _\* Protocol designers like to think ahead.  Don't get too excited ...

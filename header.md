@@ -43,7 +43,8 @@ The Frame section contains information about the ...
 
 The _tagged_ field is a boolean flag that indicates whether the Frame Address
 _target_ field is being used to address an individual device or all devices.
-For device discovery using [Device::GetService](messages/device.md#getservice),
+For device discovery using
+[Device::GetService](messages/device.md#getservice---2),
 the _tagged_ field should be set to one (1) and the _target_ should be all
 zeroes.  In all other messages, the _tagged_ field should be set to zero (0)
 and the _target_ field should contain the device MAC address.
