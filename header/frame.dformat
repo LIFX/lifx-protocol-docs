@@ -3,7 +3,7 @@ style bitwid 0.1
 noname
      16--16 size
      2--2 origin
-     1--1 reserved
+     1--1 tagged
      1--1 addressable
      12--12 protocol
      32--32 source

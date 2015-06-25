@@ -12,7 +12,8 @@
 ## Discovery
 
 1. Send [Device::GetService](messages/device.md#getservice---2)
-as a UDP broadcast to port 56700.
+as a UDP broadcast to port 56700 with the [Frame](header.md#frame)
+_tagged_ field set to one (1).
 2. All devices on LAN should respond back with one or more
 [Device::StateService](messages/device.md#stateservice---3) messages.
 3. Clients can then send further messages directly to individual devices or
