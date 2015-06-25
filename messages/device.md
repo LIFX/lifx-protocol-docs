@@ -135,6 +135,9 @@ Sent by a client to acquire responses from all devices on the local network.
 No payload is required.
 Causes the devices to transmit a [StateService](#stateservice---3) message.
 
+When using this message, the [Frame](../header.md#frame) _tagged_ field must
+be set to one (1).
+
 ### StateService - 3
 
 Response to [GetService](#getservice---2) message.

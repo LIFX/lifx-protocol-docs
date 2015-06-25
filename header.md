@@ -27,6 +27,7 @@ The Frame section contains information about the ...
 
 * Size of the entire message
 * LIFX Protocol number: must be 1024 (decimal)
+* Use of the Frame Address _target_ field
 * Source identifier
 
 ![](header/frame.png)
@@ -35,10 +36,18 @@ The Frame section contains information about the ...
 |-------|------|------|-------------|
 | size | 16 | uint16_t | Size of entire message in bytes including this field |
 | origin | 2 | uint8_t | Message origin indicator: must be zero (0) |
-| reserved | 1 | | Reserved: must be zero (0) |
+| tagged | 1 | bool | Determines usage of Frame Address _target_ field
 | addressable | 1 | bool | Message includes a target address: must be one (1) |
 | protocol | 12 | uint16_t | Protocol number: must be 1024 (decimal) |
 | source | 32 | uint32_t | Source identifier: unique value set by the client, used by responses |
+
+The _tagged_ field is a boolean flag that indicates whether the Frame Address
+_target_ field is being used to address an individual device or all devices.
+For device discovery using
+[Device::GetService](messages/device.md#getservice---2),
+the _tagged_ field should be set to one (1) and the _target_ should be all
+zeroes.  In all other messages, the _tagged_ field should be set to zero (0)
+and the _target_ field should contain the device MAC address.
 
 The _source_ identifier allows each client to provide an unique value,
 which will be included by the LIFX device in any message that is sent in
@@ -72,7 +81,7 @@ The Frame Address section contains routing information about the ...
 The _target_ device address is 8 bytes long, when using the 6 byte MAC address
 then left-justify the value and zero-fill the last two bytes.
 A _target_ device address of all zeroes effectively addresses all devices
-on the local network.
+on the local network.  The Frame _tagged_ field must be set accordingly.
 
 There are two flags that cause a LIFX device to send a message in response.
 In these cases, the _source_ identifier in the response message will be set
