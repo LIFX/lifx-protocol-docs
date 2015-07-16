@@ -61,15 +61,15 @@ Describes the services exposed by the device.
 | Type | Value |
 |-----|------|
 | UDP | 1 |
-| reserved | 2 |
-| reserved | 3 |
-| reserved | 4 |
 
 When a device is [discovered](../workflows.md#discovery) the Service types
 and IP [port](#port) are provided.
 
 The LIFX Protocol utilizes UDP/IP for all messages covered by this
 documentation.
+
+All values other than those documented above are reserved for future
+protocol expansion.
 
 ## Message field data types
 
