@@ -52,8 +52,9 @@ and the _target_ field should contain the device MAC address.
 The _source_ identifier allows each client to provide an unique value,
 which will be included by the LIFX device in any message that is sent in
 response to a message sent by the client.
-If the _source_ identifier is a non-zero value, then the LIFX device will send
-a unicast message back to the IP address of the originating client.
+If the _source_ identifier is a non-zero value, then the LIFX device will
+send a unicast message to the source IP address and port that the client
+used to send the originating message.
 If the _source_ identifier is a zero value, then the LIFX device may send
 a broadcast message that can be received by all clients on the same sub-net.
 See _ack\_required_ and _res\_required_ fields in the Frame Address.
