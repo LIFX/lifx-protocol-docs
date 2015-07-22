@@ -47,7 +47,12 @@ For device discovery using
 [Device::GetService](messages/device.md#getservice---2),
 the _tagged_ field should be set to one (1) and the _target_ should be all
 zeroes.  In all other messages, the _tagged_ field should be set to zero (0)
-and the _target_ field should contain the device MAC address.
+and the _target_ field should contain the device MAC address. The device will
+then respond with a [Device::StateService](messages/device.md#stateservice---3)
+message, which will include its own MAC address in the target field. In all
+subsequent messages that the client sends to the device, the target field
+should be set to the device MAC address, and the tagged field should be set
+to zero (0).
 
 The _source_ identifier allows each client to provide an unique value,
 which will be included by the LIFX device in any message that is sent in
