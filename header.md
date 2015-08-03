@@ -143,7 +143,7 @@ typedef struct {
   uint16_t size;
   uint16_t protocol:12;
   uint8_t  addressable:1;
-  uint8_t  :1;
+  uint8_t  tagged:1;
   uint8_t  origin:2;
   uint32_t source;
   /* frame address */
