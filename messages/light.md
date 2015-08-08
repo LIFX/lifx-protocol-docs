@@ -10,6 +10,7 @@
 * [Light messages](#light-messages) - message type value
   * [Get - 101](#get---101)
   * [SetColor - 102](#setcolor---102)
+  * [SetWaveform - 103](#setwaveform---103)
   * [State - 107](#state---107)
   * [GetPower - 116](#getpower---116)
   * [SetPower - 117](#setpower---117)
@@ -32,6 +33,21 @@ The [Protocol header](../header.md#protocol-header) _message type_ field value
 (decimal) appears after each message name in this document.
 Each section below describes the _payload_ that is appended to the
 [message header](../header.md).  Some messages do not require a payload.
+
+## Enumerated types
+
+### Waveform
+
+Describes the type of flashing pattern used in the
+[SetWaveform](#setwaveform---103) message.
+
+| Type     | Value |
+|----------|-------|
+| Saw      | 0     |
+| Sine     | 1     |
+| HalfSine | 2     |
+| Triangle | 3     |
+| Pulse    | 4     |
 
 ## Message field data types
 
@@ -85,6 +101,34 @@ The _duration_ is the color transition time in milliseconds.
 
 If the [Frame Address](../header.md#frame-address) _res\_required_ field is
 set to one (1) then the device will transmit a [State](#state---107) message.
+
+### SetWaveform - 103
+
+Sent by a client to cause the light to display a configurable flashing
+pattern, such as used by the "pulse" and "breathe" effects in the HTTP
+API.
+
+| Field      | Type                                                  |
+|------------|-------------------------------------------------------|
+| reserved   | unsigned 8-bit integer                                |
+| transient  | unsigned 8-bit integer, interpreted as boolean        |
+| color      | HSBK                                                  |
+| period     | unsigned 32-bit integer                               |
+| cycles     | 32-bit float                                          |
+| duty_cycle | signed 16-bit integer                                 |
+| waveform   | unsigned 8-bit integer, maps to [Waveform](#waveform) |
+
+If _transient_ is 1, the color returns to the original color of the
+light, after the specified number of _cycles_.  If _transient_ is
+0, the light is left set to _color_ after the specified number of
+_cycles_.
+
+The _period_ is the length of one cycle in milliseconds.
+
+If _duty_cycle_ is 0, an equal amount of time is spent on the original
+color and the new _color_.  If _duty_cycle_ is positive, more time is
+spent on the original color.  If _duty_cycle_ is negative, more time
+is spent on the new color.
 
 ### State - 107
 
