@@ -34,6 +34,10 @@
   * [GetInfo - 34](#getinfo---34)
   * [StateInfo - 35](#stateinfo---35)
   * [Acknowledgement - 45](#acknowledgement---45)
+  * [GetLocation - 48](#getlocation---48)
+  * [StateLocation - 50](#statelocation---50)
+  * [GetGroup - 51](#getgroup---51)
+  * [StateGroup - 53](#stategroup---53)
   * [EchoRequest - 58](#echorequest---58)
   * [EchoResponse - 59](#echoresponse---59)
 
@@ -339,6 +343,38 @@ Provides run-time information of device.
 
 Response to any message sent with _ack\_required_ set to 1.
 See [message header frame address](../header.md#frame-address).
+
+### GetLocation - 48
+
+Ask the bulb to return its location information.
+No payload is required.
+Causes the device to transmit a [StateLocation](statelocation---50) message.
+
+### StateLocation - 50
+
+Device location.
+
+| Field | Type |
+|-------|------|
+| location | byte array, size: 16 |
+| label | string, size: 32 |
+| updated_at | unsigned 64-bit integer |
+
+### GetGroup - 51
+
+Ask the bulb to return its group membership information.
+No payload is required.
+Causes the device to transmit a [StateGroup](stategroup---53) message.
+
+### StateGroup - 53
+
+Device group.
+
+| Field | Type |
+|-------|------|
+| group | byte array, size: 16 |
+| label | string, size: 32 |
+| updated_at | unsigned 64-bit integer |
 
 ### EchoRequest - 58
 
