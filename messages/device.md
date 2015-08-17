@@ -364,7 +364,7 @@ Device location.
 
 Ask the bulb to return its group membership information.
 No payload is required.
-Causes the device to transmit a [StateGroup](stategroup---58) message.
+Causes the device to transmit a [StateGroup](stategroup---53) message.
 
 ### StateGroup - 53
 
