@@ -191,7 +191,9 @@ Response to [GetHostFirmware](#gethostfirmware---14) message.
 Provides host firmware information.
 
 * build: firmware build [time](#time) (absolute time in nanoseconds since epoch)
-* version: firmware version
+* version: firmware version that consists of the major (upper 16 bits) and minor
+  (lower 16 bits) versions
+
 
 | Field | Type |
 |-------|------|
@@ -236,7 +238,8 @@ Response to [GetWifiFirmware](#getwififirmware---18) message.
 Provides Wifi subsystem information.
 
 * build: firmware build [time](#time) (absolute time in nanoseconds since epoch)
-* version: firmware version
+* version: firmware version that consists of the major (upper 16 bits) and minor
+  (lower 16 bits) versions
 
 | Field | Type |
 |-------|------|
