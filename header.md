@@ -128,7 +128,7 @@ The Protocol header contains information about the message ...
 
 | Field | Bits | Type | Description |
 |-------|------|------|-------------|
-| reerved | 64 | uint64_t | Reserved |
+| reserved | 64 | uint64_t | Reserved |
 | type | 16 | uint16_t | Message type determines the payload being used |
 | reserved | 16 | | Reserved |
 
