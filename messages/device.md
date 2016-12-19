@@ -191,13 +191,15 @@ Response to [GetHostFirmware](#gethostfirmware---14) message.
 Provides host firmware information.
 
 * build: firmware build [time](#time) (absolute time in nanoseconds since epoch)
-* version: firmware version
+* version_major: major firmware version
+* version_minor: minor firmware version
 
 | Field | Type |
 |-------|------|
 | build | unsigned 64-bit integer |
 | reserved | unsigned 64-bit integer |
-| version | unsigned 32-bit integer |
+| version_major | unsigned 16-bit integer |
+| version_minor | unsigned 16-bit integer |
 
 ### GetWifiInfo - 16
 
@@ -236,13 +238,15 @@ Response to [GetWifiFirmware](#getwififirmware---18) message.
 Provides Wifi subsystem information.
 
 * build: firmware build [time](#time) (absolute time in nanoseconds since epoch)
-* version: firmware version
+* version_major: major firmware version
+* version_minor: minor firmware version
 
 | Field | Type |
 |-------|------|
 | build | unsigned 64-bit integer |
 | reserved | unsigned 64-bit integer |
-| version | unsigned 32-bit integer |
+| version_major | unsigned 16-bit integer |
+| version_minor | unsigned 16-bit integer |
 
 ### GetPower - 20
 
